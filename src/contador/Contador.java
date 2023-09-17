@@ -9,19 +9,24 @@ public class Contador {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner terminal = new Scanner(System.in);
+		boolean parametrosValidos;
 		
 		System.out.print("Digite o primeiro parâmetro: ");
 		int parametroUm = terminal.nextInt();
+		int parametroDois;
 		
-		System.out.print("Digite o segundo parâmetro: ");
-		int parametroDois = terminal.nextInt();
-		
-		try {
-			contar(parametroUm, parametroDois);
-		
-		} catch (ParametroInvalido e) {
-			System.out.println("Erro: " + e.getMessage());
-		}
+		do {
+            System.out.print("Digite o segundo parâmetro: ");
+            parametroDois = terminal.nextInt();
+
+            try {
+                contar(parametroUm, parametroDois);
+                parametrosValidos = true; 
+            } catch (ParametroInvalido e) {
+                System.out.println("Erro: " + e.getMessage());
+                parametrosValidos = false;
+            }
+        } while (!parametrosValidos);
 		
 	}
 	
@@ -32,7 +37,7 @@ public class Contador {
 		
 		int contagem = parametroDois - parametroUm;
         for (int i = 0; i < contagem; i++) {
-            System.out.println("Imprimindo o número " + i);
+            System.out.println("Imprimindo o número " + (i + 1));
         }
 	}
 }
