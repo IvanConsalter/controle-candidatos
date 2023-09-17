@@ -19,6 +19,7 @@ public class ProcessoSeletivo {
         
         System.out.println("\n-- Imprimir Selecionados --");
         imprimirSelecionados();
+
     }
 
     static void analisarCandidato(double salarioPretendido) {
@@ -33,7 +34,6 @@ public class ProcessoSeletivo {
     }
     
     static void selecaoCandidatos() {
-        
         int candidatosSelecionados = 0;
         int candidatosAtual = 0;
         double salarioBase = 1600.0;
@@ -58,7 +58,7 @@ public class ProcessoSeletivo {
     static double valorPretendido() {
         return ThreadLocalRandom.current().nextDouble(1500, 2500);
     }
-    
+
     static void imprimirSelecionados() {
         System.out.println("Imprimindo a lista de candidatos");
 
@@ -67,4 +67,5 @@ public class ProcessoSeletivo {
             System.out.println("O candidato selecionado foi " + candidato);
         }
     }
+
 }
